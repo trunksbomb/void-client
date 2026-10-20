@@ -90,6 +90,14 @@ final class Class66 {
                     Class348_Sub36 class348_sub36 = new Class348_Sub36();
                     class348_sub36.aClass46_6989 = class46;
                     class348_sub36.anObjectArray6987 = class46.anObjectArray815;
+                    if (!Loader.skipLobby && i == Class54.anInt970
+                            && class348_sub36.anObjectArray6987.length >= 3
+                            && Integer.valueOf(3057).equals(class348_sub36.anObjectArray6987[0])) {
+                        // The 634 lobby initializer's first argument is 0 for quick world login,
+                        // 1 to show the lobby. Keep timer retries on the same lobby path.
+                        class348_sub36.anObjectArray6987 = class348_sub36.anObjectArray6987.clone();
+                        class348_sub36.anObjectArray6987[1] = 1;
+                    }
                     method712(class348_sub36, 2000000);
                 }
             }
@@ -1189,7 +1197,7 @@ final class Class66 {
                     Class64_Sub3.aString5600 = string;
                     Class186.aString2496 = string_142_;
                     RuntimeException_Sub1.anInt4596 = i_143_;
-                    Class348_Sub49.method3379(2, 6);
+                    Class348_Sub49.method3379(2, Loader.skipLobby ? 6 : 5);
                     return;
                 }
                 return;

@@ -14,7 +14,7 @@ public class Loader extends Applet {
     public JPanel aJPanel3 = new JPanel();
     public static boolean loadRunescape = false;
     public static boolean showCoordinates = true;
-    public static boolean skipLobby = true;
+    public static boolean skipLobby = false;
     public static boolean splitPorts = false;
     public static boolean debug = false;
     public static boolean trace = false;
@@ -46,6 +46,9 @@ public class Loader extends Applet {
                 case "-p":
                 case "--port":
                     port = Integer.parseInt(args[i + 1]);
+                    break;
+                case "--skip-lobby":
+                    skipLobby = true;
                     break;
                 case "-d":
                 case "--debug":
